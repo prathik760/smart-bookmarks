@@ -4,13 +4,13 @@ import { supabase } from "@/src/lib/supabaseClient";
 
 export default function LoginPage() {
   const loginWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "http://localhost:3000/dashboard",
-      },
-    });
-  };
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${location.origin}/dashboard`,
+    },
+  });
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
